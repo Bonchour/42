@@ -6,7 +6,7 @@
 /*   By: amorel <amorel@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:57:30 by amorel            #+#    #+#             */
-/*   Updated: 2022/07/03 23:23:17 by amorel           ###   ########.fr       */
+/*   Updated: 2022/07/12 12:24:54 by hde-min          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,20 @@ typedef struct s_utils
 	char	*new_name;
 }t_utils;
 
-typedef struct s_check
+/*typedef struct s_check
 {
 	int	dq;
 	int	sq;
 	int	last;
-}t_check;
+}t_check;*/
+
+typedef struct s_stri
+{
+	int	len;
+	int	i;
+	int	quote;
+	int	j;
+}t_stri;
 
 enum	e_char{espace, simpleq, doubleq, nothing};
 
@@ -110,4 +118,7 @@ void				ft_parse_2(t_data *data);
 void				ft_end_the_check(char **path, char *name, t_data *data);
 int					ft_check_the_simple(int last, int sq);
 int					ft_check_the_double(int last, int dq);
+void				ft_s_1(t_stri *stri, char c, char const *s);
+void				ft_s_2(t_stri *stri, char const *s);
+void				ft_s_3(t_stri *stri, char const *s);
 #endif

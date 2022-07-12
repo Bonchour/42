@@ -6,7 +6,7 @@
 /*   By: amorel <amorel@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:29:10 by amorel            #+#    #+#             */
-/*   Updated: 2022/06/30 23:33:22 by amorel           ###   ########.fr       */
+/*   Updated: 2022/07/12 12:21:33 by hde-min          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strlcat(char *dst, const char *src, int size)
 	int		j;
 
 	i = 0;
-	j = 0;
+	j = -1;
 	if (dst)
 	{
 		dest2 = ft_calloc(ft_strlen(dst) + size + 1, 1);
@@ -31,11 +31,8 @@ char	*ft_strlcat(char *dst, const char *src, int size)
 	}
 	else
 		dest2 = ft_calloc(2, 1);
-	while (src[j] && j < size)
-	{
+	while (src[++j] && j < size)
 		dest2[i + j] = src[j];
-		j++;
-	}
 	dest2[i + j] = '\0';
 	if (dst)
 		free(dst);
